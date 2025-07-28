@@ -26,6 +26,8 @@ product-info {
   font-weight: 500;
   border: initial;
   cursor: pointer;
+  background-color: #C7BD99;
+  color: #000;
 
   .product-price-current, .product-price-compare {
     font-weight: 600;
