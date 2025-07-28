@@ -165,8 +165,8 @@ html {
   justify-content: center;
   text-align: center;
   line-height: 145%;
-  color: #404040;
-  border: 0.2rem solid #404040;
+  background-color: #C7BD99;
+  color: #fff;
   border-radius: 10rem;
   text-decoration: none;
   min-height: 4rem;
@@ -182,7 +182,7 @@ html {
 }
 
 .button-dark:hover {
-  background-color: #000;
+  background-color: #E5D189;
   color: #fff;
 }
 
@@ -2769,21 +2769,21 @@ input[type='checkbox'] {
 
 @media screen and (min-width: 990px) {
   .header__link-cta {
-    border: 0.1rem solid rgba(0, 0, 0, 0.5);
     border-radius: 10rem;
     text-decoration: initial;
     min-width: 13rem;
+    background-color: #C7BD99;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 4.3rem;
-    color: #000;
+    color: #fff;
     font-size: 1.8rem;
     transition: background-color 0.3s linear, color 0.3s linear;
 
     &:hover {
-      background-color: #000;
+      background-color: #E5D189;
       color: #fff;
     }
   }

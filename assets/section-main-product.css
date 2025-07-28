@@ -23,8 +23,8 @@ product-info {
 
 .button--primary-volufiline {
   max-width: initial;
-  background-color: #fff;
   font-weight: 500;
+  border: initial;
   cursor: pointer;
 
   .product-price-current, .product-price-compare {
