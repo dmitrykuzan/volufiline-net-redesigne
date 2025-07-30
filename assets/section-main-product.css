@@ -17,25 +17,32 @@ product-info {
   }
 }
 
+
+
 .product.grid {
   flex-wrap: initial;
 }
 
+.product-price-compare {
+  text-decoration: line-through !important;
+}
+
 .button--primary-volufiline {
   max-width: initial;
-  font-weight: 500;
-  border: initial;
-  cursor: pointer;
   background-color: #C7BD99;
+  border: 0.1rem solid #000;
   color: #000;
+  font-weight: 500;
+  cursor: pointer;
 
   .product-price-current, .product-price-compare {
     font-weight: 600;
   }
+}
 
-  .product-price-compare {
-    text-decoration: line-through;
-  }
+.blue-btn {
+  background-color: #007AFF;
+  color: #fff;
 }
 
 .button-sticky-volufiline {
@@ -423,11 +430,14 @@ a.product__text {
 }
 
 .product__title {
+  position: relative;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  padding-right: 7rem;
+  text-wrap: nowrap;
   
   gap: 0.8rem;
   word-break: break-word;
@@ -448,6 +458,24 @@ a.product__text {
       max-width: 1.8rem;
     }
   }
+}
+
+.volufiline-product-slider__badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-align: center;
+  z-index: 2;
 }
 
 
