@@ -96,17 +96,9 @@
             <span>
               {% assign variant = product.selected_or_first_available_variant %}
 
-              BUY VOLUFILINE‎ ‎
+              ADD TO CART‎ ‎
 
-              <span class="product-price-current">
-                {{ variant.price | money }}
-              </span>
-
-              {% if variant.compare_at_price > variant.price %}
-                <span class="product-price-compare">
-                  {{ variant.compare_at_price | money }}
-                </span>
-              {% endif %}
+             
             </span>
             {%- render 'loading-spinner' -%}
           </button>
