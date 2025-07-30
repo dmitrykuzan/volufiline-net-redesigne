@@ -1,23 +1,25 @@
- {{ 'banner-volufiline.css' | asset_url | stylesheet_tag }}
+{{ 'banner-volufiline.css' | asset_url | stylesheet_tag }}
 
-<section class="banner-volufiline page-width">
+<section class="banner-volufiline page-width" aria-label="Volufiline 100% Serum Offer">
   <div class="banner-volufiline__wrapper">
+
+    <!-- IMAGE BLOCK -->
     <div class="banner-volufiline__image">
-     <img
+      <img
         class="banner-volufiline-banner-logo"
         src="{{ 'banner-logo.png' | asset_url }}"
         width="126"
         height="126"
-        alt="banner logo"
+        alt="Volufiline emblem logo"
         loading="lazy"
       > 
 
-       <img
+      <img
         class="banner-volufiline__image-img"
         src="{{ 'banner-volufiline-img.jpg' | asset_url }}"
         width="880"
         height="660"
-        alt="volufiline bottle"
+        alt="Volufiline face serum bottle on white background"
         loading="lazy"
       > 
 
@@ -26,13 +28,12 @@
         src="{{ 'banner-volufiline-img-mobile.jpg' | asset_url }}"
         width="2544"
         height="3393"
-        alt="volufiline bottle"
+        alt="Mobile version: Volufiline bottle highlighting facial plumping effects"
         loading="lazy"
       > 
 
-        {% assign product = all_products['volufiline-100'] %}
-
-      <a href="{{ product.url }}" class="button-dark banner-volufiline__banner-btn" >25% OFF TODAY</a>
+      {% assign product = all_products['volufiline-100'] %}
+      <a href="{{ product.url }}" class="button-dark banner-volufiline__banner-btn">25% OFF TODAY</a>
     </div>
 
     <div class="banner-volufiline__content">
@@ -42,10 +43,10 @@
           Enhances volume and plumps skin
         </p>
       </div>
-      <div class="banner-volufiline__benefits">
-        <span>Volumize.</span>
-        <span>Tighten.</span>
-        <span>Restore.</span>
+      <div class="banner-volufiline__benefits" role="list" aria-label="Key Benefits of Volufiline">
+       <span role="listitem">Volumize</span>
+        <span role="listitem">Tighten</span>
+        <span role="listitem">Restore</span>
       </div>
 
       {% for block in section.blocks %}
@@ -56,6 +57,17 @@
       {% endfor %}
     </div>
   </div>
+
+  <div style="display:none; visibility:hidden; position:absolute; left:-9999px;">
+  <h2>Volufiline for Fuller Cheeks and Youthful Skin</h2>
+  <p>Experience a visible lift with Volufiline 100% — designed to enhance <strong>cheek volume</strong>, reduce the look of <strong>hollow under-eyes</strong>, and naturally support <strong>plumper lips</strong> without needles.</p>
+
+  <h3>Can Volufiline reduce eye bags?</h3>
+  <p>Yes, daily use may help diminish puffiness and restore lost volume, creating a smoother under-eye contour.</p>
+
+  <h4>Before and After: Subtle Yet Noticeable</h4>
+  <p>Customers often report a firmer look around the cheeks, lips, and under-eye area within 30 days of consistent use.</p>
+</div>
 </section>
 
 {% schema %}
