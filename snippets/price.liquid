@@ -91,23 +91,36 @@
         {%- endif -%}
       </div>
       <div class="price__sale">
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+        <span class="visually-hidden visually-hidden--inline">
+          {{ 'products.product.price.sale_price' | t }}
+        </span>
+
+        <span class="price-item price-item--sale price-item--last">
+          {% if settings.currency_code_enabled %}
+            {{ product.price | money_with_currency }}
+          {% else %}
+            {{ product.price | money }}
+          {% endif %}
+        </span>
+
+        {% if product.compare_at_price > product.price %}
+          <span class="visually-hidden visually-hidden--inline">
+            {{ 'products.product.price.regular_price' | t }}
+          </span>
           <span>
             <s class="price-item price-item--regular">
               {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
+                {{ product.compare_at_price | money_with_currency }}
               {% else %}
-                {{ compare_at_price | money }}
+                {{ product.compare_at_price | money }}
               {% endif %}
             </s>
           </span>
-        {%- endunless -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="price-item price-item--sale price-item--last">
-          {{ money_price }}
-        </span>
+        {% endif %}
       </div>
+      {% if show_badges %}
+        <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}"> Save 30% </span>
+      {% endif %}
       <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
         <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
         <span class="price-item price-item--last">
@@ -124,10 +137,6 @@
       </small>
     </div>
     {%- if show_badges -%}
-      <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-        {{ 'products.product.on_sale' | t }}
-      </span>
-
       <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
         {{ 'products.product.sold_out' | t }}
       </span>
