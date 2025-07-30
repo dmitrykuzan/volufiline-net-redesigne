@@ -1,25 +1,30 @@
 {{ 'sticky-panel.css' | asset_url | stylesheet_tag }}
 
 <div class="sticky-panel page-width">
-	<div class="sticky-panel__wrapper ">
-		<a class="sticky-panel__button button-dark" href="#">
-			<span>
-				{% assign variant = product.selected_or_first_available_variant %}
-				
-				BUY VOLUFILINE‎ ‎
-				
-				<span class="product-price-current">
-					{{ variant.price | money }}
-				</span>
-				
-				{% if variant.compare_at_price > variant.price %}
-					<span class="product-price-compare">
-						{{ variant.compare_at_price | money }}
-					</span>
-				{% endif %}
-			</span>
-		</a>
-	</div>
+  <div class="sticky-panel__wrapper ">
+    <form method="post" action="/cart/add" style="cursor: pointer !important;">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input type="hidden" name="quantity" value="1">
+
+      <button type="submit" class="sticky-panel__button button-dark">
+        <span>
+          BUY VOLUFILINE‎ ‎
+
+          <span class="product-price-current">
+            {{ product.selected_or_first_available_variant.price | money }}
+          </span>
+
+          {% if product.selected_or_first_available_variant.compare_at_price
+              > product.selected_or_first_available_variant.price
+          %}
+            <span class="product-price-compare">
+              {{ product.selected_or_first_available_variant.compare_at_price | money }}
+            </span>
+          {% endif %}
+        </span>
+      </button>
+    </form>
+  </div>
 </div>
 
 <script>
@@ -31,10 +36,10 @@
       let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
       if (currentScroll > 400 && currentScroll > lastScrollTop) {
-       
+
         stickyPanel.classList.add('show');
       } else if (currentScroll < lastScrollTop) {
-        
+
         stickyPanel.classList.remove('show');
       }
 
