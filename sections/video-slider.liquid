@@ -1,6 +1,9 @@
 {{ 'video-slider.css' | asset_url | stylesheet_tag }}
 {{ 'before-after-slider.css' | asset_url | stylesheet_tag }}
 
+{{ 'video-slider.css' | asset_url | stylesheet_tag }}
+{{ 'before-after-slider.css' | asset_url | stylesheet_tag }}
+
 <section class="before-after-slider page-width section-melatonin" id="VideoSlider{{ section.id }}">
   <div class="before-after-slider__content-wrapper">
     <div class="before-after-slider__titles">
@@ -8,31 +11,13 @@
 
       <div class="hero__review">
         <div class="volufiline-rating-stars">
+          {% for _ in (1..5) %}
           <span class="volufiline-rating-star">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
               <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
             </svg>
           </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
+          {% endfor %}
         </div>
         <p>5,328</p>
       </div>
@@ -51,7 +36,7 @@
                     preload="auto"
                     poster="{{ block.settings.poster_url }}"
                   >
-                    <source src="{{ block.settings.video_url  }}" type="video/mp4">
+                    <source src="{{ block.settings.video_url }}" type="video/mp4">
                   </video>
                   <button class="video-slider__slide-button" aria-label="Play video">
                     <img src="{{ 'play-button.png' | asset_url }}" width="80" height="80" alt="Play Button">
@@ -66,25 +51,13 @@
 
           <div class="before-after-slider__btns">
             <button class="before-after-slider__btn video-slider__btn--prev">
-              <svg
-                width="30px"
-                height="30px"
-                viewBox="-19.04 0 75.804 75.804"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"></path> </g> </g>
+              <svg width="30px" height="30px" viewBox="-19.04 0 75.804 75.804" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <path d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"/>
               </svg>
             </button>
             <button class="before-after-slider__btn video-slider__btn--next">
-              <svg
-                width="30px"
-                height="30px"
-                viewBox="-19.04 0 75.804 75.804"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="#000000"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Group_65" data-name="Group 65" transform="translate(-831.568 -384.448)"> <path id="Path_57" data-name="Path 57" d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"></path> </g> </g>
+              <svg width="30px" height="30px" viewBox="-19.04 0 75.804 75.804" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <path d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z" fill="#525252"/>
               </svg>
             </button>
           </div>
@@ -97,6 +70,18 @@
           </a>
         {% endif %}
       {% endfor %}
+    </div>
+
+    <div style="position: absolute; left: -9999px; height: 0; width: 0; overflow: hidden;">
+      <h2>Video Testimonials on Fuller Cheeks and Eye Bags</h2>
+      <h3>Can Volufiline really help with lips and hollow under eyes?</h3>
+      <p>Watch real users share their results using Volufiline serum to restore youthful volume to cheeks, under-eyes, and lips. These before and after videos showcase how consistent application reduces eye bags, smooths smile lines, and gives a naturally plumper look.</p>
+      <h4>Before and after video reviews of Volufiline serum</h4>
+      <ul>
+        <li>Improves fullness under the eyes</li>
+        <li>Visibly enhances lips and smile lines</li>
+        <li>Customer results with fuller cheeks and less sagging</li>
+      </ul>
     </div>
   </div>
 </section>
