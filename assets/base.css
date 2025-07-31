@@ -2652,7 +2652,7 @@ input[type="checkbox"] {
   position: relative;
   /* background-color: rgb(var(--color-background)); */
   box-shadow: 0px 6px 40px 0px rgba(0, 0, 0, 0.08);
-  background: rgba(246, 246, 246, 0.5);
+  background: rgba(246, 246, 246, 1);
 }
 
 .header-wrapper--border-bottom {
