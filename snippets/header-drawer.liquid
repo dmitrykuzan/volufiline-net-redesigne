@@ -295,20 +295,4 @@
   </details>
 </header-drawer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector('summary.header__icon--menu');
-    const menuDrawer = document.querySelector('#menu-drawer');
 
-    if (menuToggle && menuDrawer) {
-      menuDrawer.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          // Collapse the <summary> tag
-          if (menuToggle.parentElement.hasAttribute('open')) {
-            menuToggle.parentElement.removeAttribute('open');
-          }
-        });
-      });
-    }
-  });
-</script>
