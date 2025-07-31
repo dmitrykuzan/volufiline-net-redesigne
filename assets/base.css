@@ -2845,6 +2845,7 @@ input[type="checkbox"] {
     color: #000;
     font-size: 1.8rem;
     transition: background-color 0.3s linear, color 0.3s linear;
+    margin-top: 20px;
 
     &:hover {
       background-color: #000;
