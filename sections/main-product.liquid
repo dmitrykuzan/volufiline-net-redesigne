@@ -100,6 +100,7 @@
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
+
                   <a href="{{ product.url }}" class="product__title">
                     <h2 class="h1">
                       {{ product.title | escape }}
@@ -199,15 +200,33 @@
                     {{ product.description }}
                   </div>
 
-                  <div class="button-sticky-volufiline">
-                    {%- render 'buy-buttons',
-                      block: block,
-                      product: product,
-                      product_form_id: product_form_id,
-                      section_id: section.id,
-                      show_pickup_availability: true
-                    -%}
+                  <div class="custom__lowstock">
+                    <div class="custom__lowstock-title">
+                      <span class="custom__lowstock-icon">
+                        <svg width="30" height="30" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.84 31V28.056H20.688V31H17.84ZM17.84 25.24V7.96H20.688V25.24H17.84Z" fill="black"/>
+                          <circle cx="19.5" cy="19.5" r="19" stroke="black" stroke-opacity="0.5"/>
+                        </svg>
+                      </span>
+
+                      <p>Low Stock</p>
+                      <div class="custom__lowstock-text">This product has limited availability.</div>
+                    </div>
+                    <div class="custom__lowstock-indicator">
+                      <div class="custom__lowstock-track">
+                        <span></span>
+                      </div>
+                      <span class="custom__lowstock-value">97% Sold</span>
+                    </div>
                   </div>
+
+                  {%- render 'buy-buttons',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id,
+                    section_id: section.id,
+                    show_pickup_availability: true
+                  -%}
 
                   {% if product and product.handle == 'volufiline-100' %}
                     <div class="product__upgrade">
@@ -800,31 +819,30 @@
       {{ product | structured_data }}
     </script>
   </div>
+
 </product-info>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Volufiline 100% Face Serum - 30ml",
-  "image": [
-    "https://cdn.shopify.com/s/files/1/0702/9991/0336/files/product012.png?v=1753755437"
-  ],
-  "description": "100% pure Volufiline serum designed to visibly plump, smooth, and restore skin volume—targeting areas like under-eyes, cheeks, and smile lines. Safe for sensitive skin.",
-  "brand": {
-    "@type": "Brand",
-    "name": "Volufiline"
-  },
-  "sku": "VOL-30ML",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://volufiline.net/products/volufiline-100", 
-    "priceCurrency": "USD",
-    "price": "38.00",  
-    "availability": "https://schema.org/InStock",
-    "itemCondition": "https://schema.org/NewCondition"
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Volufiline 100% Face Serum - 30ml",
+    "image": ["https://cdn.shopify.com/s/files/1/0702/9991/0336/files/product012.png?v=1753755437"],
+    "description": "100% pure Volufiline serum designed to visibly plump, smooth, and restore skin volume—targeting areas like under-eyes, cheeks, and smile lines. Safe for sensitive skin.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Volufiline"
+    },
+    "sku": "VOL-30ML",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://volufiline.net/products/volufiline-100",
+      "priceCurrency": "USD",
+      "price": "38.00",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
   }
-}
 </script>
 
 {% schema %}
