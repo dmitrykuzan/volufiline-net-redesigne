@@ -22,6 +22,34 @@
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Volufiline",
+  "url": "https://volufiline.net",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://volufiline.net/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Volufiline",
+  "url": "https://volufiline.net",
+  "logo": "https://cdn.shopify.com/s/files/1/0702/9991/0336/files/product012.png?v=1753755437",
+  "sameAs": [
+    "https://www.instagram.com/volufiline",
+    "https://www.facebook.com/volufiline"
+  ]
+}
+</script>
+
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
