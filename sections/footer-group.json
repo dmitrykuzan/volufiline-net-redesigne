@@ -18,7 +18,7 @@
           "type": "text",
           "settings": {
             "heading": "SUPPORT",
-            "subtext": "<p>We’re here M-F 9am - 5pm PST.</p><p>Drop us a note anytime.<br/><a href=\"mailto:info@volufiline.us\" title=\"mailto:info@volufiline.us\">info@volufiline.us</a></p>"
+            "subtext": "<p>We’re here M-F 9am - 5pm PST.</p><p>Drop us a note anytime.<br/><a href=\"mailto:info@volufiline.us\" title=\"mailto:info@volufiline.us\">support@volufiline.net</a></p>"
           }
         },
         "link_list_JQUU7P": {
@@ -46,7 +46,7 @@
         "newsletter_enable": true,
         "newsletter_heading": "Join us on the mela-tonic to an effortless glow. Glaze your inbox with tips, tricks & exclusive content from us.",
         "enable_follow_on_shop": false,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false,
         "payment_enable": false,
