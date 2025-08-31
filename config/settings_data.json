@@ -169,9 +169,9 @@
           "custom_code": "<script>\n    // custom code here\n</script>"
         }
       },
-      "6065014864672580889": {
-        "type": "shopify://apps/amp-slide-cart-drawer/blocks/app-embed/0a410b8d-7dc4-4f2d-b4e8-c12d34fd2255",
-        "disabled": true,
+      "17676059084223943535": {
+        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
+        "disabled": false,
         "settings": {}
       }
     },
