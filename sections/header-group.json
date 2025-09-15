@@ -18,14 +18,14 @@
           "type": "announcement",
           "settings": {
             "text": "Free Shipping on All Orders Over $50",
-            "link": ""
+            "link": "shopify://products/volufiline-100"
           }
         },
         "announcement_w7Y7kb": {
           "type": "announcement",
           "settings": {
-            "text": "Summer Sale - 20% off Today!",
-            "link": ""
+            "text": "Buy 2 Get 1 Free!",
+            "link": "shopify://products/volufiline-100"
           }
         }
       },
