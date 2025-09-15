@@ -72,6 +72,16 @@
     >
   {%- endif -%}
 
+  {% if product and product.handle == 'volufiline-activating-booster-cream' %}
+    <style>
+          .product__title {
+        white-space: normal;       /* allows wrapping */
+        overflow-wrap: break-word; /* breaks long words if needed */
+        word-wrap: break-word;     /* legacy support */
+      }
+    </style>
+  {%- endif -%}
+
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
@@ -107,14 +117,22 @@
                     </h2>
                   </a>
                 </div>
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
-                    product: product,
-                    use_variant: true,
-                    show_badges: true,
-                    price_class: 'price--large'
-                  -%}
-                </div>
+                {% if product.handle == 'volufiline-activating-booster-cream' %}
+                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
+                  </div>
+
+                  <style>
+                        h1 {
+                      font-size: 2.7rem !important;
+                    }
+                  </style>
+                {% endif %}
 
               {%- when 'price' -%}
                 {%- if product.quantity_price_breaks_configured? -%}
@@ -122,20 +140,89 @@
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
-                {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                {% comment %}
                   <div class="product__tax caption rte">
-                    {%- if cart.duties_included and cart.taxes_included -%}
-                      {{ 'products.product.duties_and_taxes_included' | t }}
-                    {%- elsif cart.taxes_included -%}
-                      {{ 'products.product.taxes_included' | t }}
-                    {%- elsif cart.duties_included -%}
-                      {{ 'products.product.duties_included' | t }}
-                    {%- endif -%}
-                    {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                    {%- endif -%}
+                   <span>Free shipping included</span>
                   </div>
-                {%- endif -%}
+                {% endcomment %}
+                <div class="custom-review__top-stars">
+                  <div class="volufiline-rating-stars">
+                    <span class="volufiline-rating-star">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 122.88 117.1">
+                        <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                      </svg>
+                    </span>
+                    <span class="volufiline-rating-star">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 122.88 117.1">
+                        <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                      </svg>
+                    </span>
+                    <span class="volufiline-rating-star">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 122.88 117.1">
+                        <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                      </svg>
+                    </span>
+                    <span class="volufiline-rating-star">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 122.88 117.1">
+                        <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                      </svg>
+                    </span>
+                    <span class="volufiline-rating-star">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 122.88 117.1">
+                        <!-- Empty star background -->
+                        <path fill="#E0E0E0" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+
+                        <!-- Filled star (gold), clipped to 75% width -->
+                        <defs>
+                          <clipPath id="clip-3-4">
+                            <rect x="0" y="0" width="92" height="117.1"/> <!-- 122.88 * 0.75 ≈ 92 -->
+                          </clipPath>
+                        </defs>
+                        <path fill="#C98A3A" clip-path="url(#clip-3-4)" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                      </svg>
+                    </span>
+                  </div>
+                  <span class="top-customer-reviews"> <em>Excellent</em> 4.8 | 5382+ Reviews </span>
+                </div>
+                <style>
+                  .custom-review__top-stars {
+                  margin-bottom: 10px;}
+                                    .total-rating {
+                                      font-size: 26px; /* desktop default */
+                                      font-weight: 400 !important;
+                                    }
+
+                                    .top-customer-reviews {
+                                      font-size: 16px !important; /* desktop default */
+                                        font-weight: 400 !important;
+                                    }
+
+                                    .volufiline-rating-star svg {
+                                      width: 20px;
+                                      height: 20px; /* desktop default */
+                                    }
+
+                                    /* Mobile overrides */
+                                    @media (max-width: 767px) {
+                                      .total-rating {
+                                        font-size: 18px !important; /* smaller on mobile */
+                                      }
+
+                                      .top-customer-reviews {
+                                        font-size: 14px !important;
+                                      }
+
+                                      .volufiline-rating-star svg {
+                                        width: 16px;
+                                        height: 16px;
+                                      }
+                                    }
+
+                                    .top-customer-reviews em {
+                    margin-right: 6px; /* adjust as needed */
+                  }
+                </style>
+
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                   {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -194,30 +281,11 @@
                     {%- endif -%}
                   {%- endif -%}
                 </p>
+
               {%- when 'description' -%}
                 {%- if product.description != blank -%}
                   <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
                     {{ product.description }}
-                  </div>
-
-                  <div class="custom__lowstock">
-                    <div class="custom__lowstock-title">
-                      <span class="custom__lowstock-icon">
-                        <svg width="30" height="30" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M17.84 31V28.056H20.688V31H17.84ZM17.84 25.24V7.96H20.688V25.24H17.84Z" fill="black"/>
-                          <circle cx="19.5" cy="19.5" r="19" stroke="black" stroke-opacity="0.5"/>
-                        </svg>
-                      </span>
-
-                      <p>Low Stock</p>
-                      <div class="custom__lowstock-text">This product has limited availability.</div>
-                    </div>
-                    <div class="custom__lowstock-indicator">
-                      <div class="custom__lowstock-track">
-                        <span></span>
-                      </div>
-                      <span class="custom__lowstock-value">97% Sold</span>
-                    </div>
                   </div>
 
                   {%- render 'buy-buttons',
@@ -228,51 +296,142 @@
                     show_pickup_availability: true
                   -%}
 
-                  {% if product and product.handle == 'volufiline-100' %}
-                    <div class="product__upgrade">
-                      <div class="product__upgrade-top">
-                        <p></p>
+                  <div class="custom-shipping-container">
+                    <div class="custom-shipping-item">
+                      <svg
+                        class="green-circle"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="13"
+                        viewBox="0 0 12 13"
+                        fill="none"
+                      >
+                        <circle cx="6" cy="6.5" r="6" fill="#137333"></circle>
+                      </svg>
+                      <div class="text-block-shipping">
+                        Ships on <span id="shipping-date" class="shipping-date"></span>
                       </div>
 
-                      <div class="product__upgrade-bottom">
-                        <p class="product__upgrade-title">UPGRADE YOUR ROUTINE</p>
-                        <div class="product__upgrade-wrapper">
-                          <div class="product__upgrade-content">
-                            <span class="product__upgrade-text"
-                              >BUY TWO <br>
-                              + <br>
-                              ONE FREE</span
-                            >
-                            <img
-                              src="{{ 'product-upgrade.png' | asset_url }}"
-                              width="100"
-                              height="117"
-                              alt="Volufiline product"
-                              loading="lazy"
-                            >
-                            <span class="product__upgrade-name">THE ULTIMATE VOLUME SET</span>
-                          </div>
+                      <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                          const shippingDateEl = document.getElementById('shipping-date');
 
-                          <form method="post" action="/cart/add">
-                            <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                            <input type="hidden" name="quantity" value="2">
+                          // Set how many days ahead you want the shipping date
+                          const daysAhead = 1; // Example: ship in 2 days
+                          const today = new Date();
+                          today.setDate(today.getDate() + daysAhead);
 
-                            <button
-                              type="submit"
-                              class="product-form__submit button-dark-2"
-                              style="cursor: pointer !important;"
-                            >
-                              <span>
-                                Buy Volume Set - $76‎
-                                <span class="product-price-compare">$114</span>
-                              </span>
-                              {%- render 'loading-spinner' -%}
-                            </button>
-                          </form>
-                        </div>
+                          // Options for formatting: abbreviated weekday, short month, numeric day
+                          const options = { weekday: 'short', month: 'short', day: 'numeric' };
+                          const formattedDate = today.toLocaleDateString('en-US', options);
+
+                          shippingDateEl.textContent = formattedDate;
+                        });
+                      </script>
+                    </div>
+                    <div class="custom-shipping-item">
+                      <div class="text-block-shipping">Free Shipping to <span class="free-shipping">USA</span></div>
+                      <img
+                        src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%22512%22%20height%3D%22512%22%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%20512%20512.01%22%20style%3D%22enable-background%3Anew%200%200%20512%20512%22%20xml%3Aspace%3D%22preserve%22%3E%3Cg%3E%3Cpath%20fill%3D%22%23f0f0f0%22%20d%3D%22M256%20512c141.38%200%20256-114.63%20256-256S397.39%200%20256%200%200%20114.64%200%20256s114.62%20256%20256%20256z%22%20opacity%3D%221%22%20data-original%3D%22%23f0f0f0%22%3E%3C%2Fpath%3E%3Cg%20fill-rule%3D%22evenodd%22%3E%3Cpath%20fill%3D%22%23d80027%22%20d%3D%22M474.17%20122.33H244.49V55.48h170.66a255.89%20255.89%200%200%201%2059.02%2066.85zM512%20256H244.63v-66.83h258.56A256.28%20256.28%200%200%201%20512%20256zM256%20512a254.3%20254.3%200%200%200%20159.29-55.6H96.72A254.19%20254.19%200%200%200%20256%20512zm218.45-122.3H37.55a253.31%20253.31%200%200%201-28.73-66.84h494.36a253.17%20253.17%200%200%201-28.73%2066.84z%22%20opacity%3D%221%22%20data-original%3D%22%23d80027%22%3E%3C%2Fpath%3E%3Cpath%20fill%3D%22%230052b4%22%20d%3D%22M118.85%2039.84h-.23V40zm0%200H142l-21.81%2015.65%208.25%2025.6-21.76-15.65-21.62%2015.65L92.17%2059a256.08%20256.08%200%200%200-49.49%2055.5h7.54l-13.8%2010-6.26%2011%206.54%2020.34-12.37-9-8.53%2019.86%207.11%2022.3h27l-21.46%2015.81%208.25%2025.6-21.76-15.65-12.8%209.38A237.13%20237.13%200%200%200%200%20256h256V0a254.85%20254.85%200%200%200-137.15%2039.84zm9.54%20190.44.19.15h-.14zm-8.21-25.46%208.21%2025.46-21.72-15.5-21.76%2015.65%208.25-25.6-21.76-15.65h27l8.25-25.6%208.25%2025.6h27zm.15-74.52%208.25%2025.6-21.76-15.65-21.76%2015.65%208.25-25.6-21.76-15.65h27l8.25-25.6%208.25%2025.6h27zm78.36%2084.48%2021.76%2015.65-8.25-25.6%2021.8-15.65h-27l-8.25-25.6-8.25%2025.6h-27l21.76%2015.65-8.25%2025.6zm13.51-84.48%208.25%2025.6-21.76-15.65-21.76%2015.65%208.25-25.6-21.76-15.65h27l8.25-25.6%208.25%2025.6h27zm8.25-48.93-8.25-25.6L234%2040.12h-27l-8.25-25.6-8.25%2025.6h-27l21.76%2015.65-8.25%2025.6%2021.76-15.65z%22%20opacity%3D%221%22%20data-original%3D%22%230052b4%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                        width="20px"
+                        loading="lazy"
+                        alt="USA flag"
+                        class="custom-icon"
+                      >
+                    </div>
+                  </div>
+
+                  <style>
+                      .custom-shipping-container {
+                        display: flex;
+                        padding: 6px 8px;
+                        justify-content: space-between;
+                        minimum-width: 100%;
+                        margin-top: 0px;
+                        margin-bottom: 0px align-items: center;
+                        align-self: stretch;
+                        border-radius: 8px;
+                    }
+
+                    .custom-shipping-item {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+
+                    .text-block-shipping {
+                        font-size: 13px;
+                        color: #2E2926;
+                    }
+
+                    .shipping-date {
+                        font-weight: bold;
+                    }
+                  </style>
+
+                  {% comment %}
+                    <div class="custom__lowstock">
+                      <div class="custom__lowstock-title">
+                        <span class="custom__lowstock-icon">
+                          <svg width="26" height="26" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.84 31V28.056H20.688V31H17.84ZM17.84 25.24V7.96H20.688V25.24H17.84Z" fill="black"/>
+                            <circle cx="19.5" cy="19.5" r="19" stroke="black" stroke-opacity="0.5"/>
+                          </svg>
+                        </span>
+
+                        <p>Low Stock</p>
+                        <div class="custom__lowstock-text">This product has limited availability.</div>
                       </div>
                     </div>
-                  {% endif %}
+                  {% endcomment %}
+
+                  {% comment %}
+                    {% if product and product.handle == 'volufiline-100' %}
+                      <div class="product__upgrade">
+                        <div class="product__upgrade-top">
+                          <p></p>
+                        </div>
+
+                        <div class="product__upgrade-bottom">
+                          <p class="product__upgrade-title">UPGRADE YOUR ROUTINE</p>
+                          <div class="product__upgrade-wrapper">
+                            <div class="product__upgrade-content">
+                              <span class="product__upgrade-text"
+                                >BUY TWO <br>
+                                + <br>
+                                ONE FREE</span
+                              >
+                              <img
+                                src="{{ 'product-upgrade.png' | asset_url }}"
+                                width="100"
+                                height="117"
+                                alt="Volufiline product"
+                                loading="lazy"
+                              >
+                              <span class="product__upgrade-name">THE ULTIMATE VOLUME SET</span>
+                            </div>
+
+                            <form method="post" action="/cart/add">
+                              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                              <input type="hidden" name="quantity" value="2">
+
+                              <button
+                                type="submit"
+                                class="product-form__submit button-dark-2"
+                                style="cursor: pointer !important;"
+                              >
+                                <span>
+                                  Buy Volume Set - $76‎
+                                  <span class="product-price-compare">$114</span>
+                                </span>
+                                {%- render 'loading-spinner' -%}
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endcomment %}
                 {%- endif -%}
 
               {%- when 'sku' -%}
@@ -289,23 +448,25 @@
                 {{ block.settings.custom_liquid }}
 
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}">
-                    <summary>
-                      <div class="summary__title">
-                        {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext">
-                          {{ block.settings.heading | default: block.settings.page.title | escape }}
-                        </h2>
+                {% if product.handle == 'volufiline-100' %}
+                  <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                    <details id="Details-{{ block.id }}-{{ section.id }}">
+                      <summary>
+                        <div class="summary__title">
+                          {% render 'icon-accordion', icon: block.settings.icon %}
+                          <h2 class="h4 accordion__title inline-richtext">
+                            {{ block.settings.heading | default: block.settings.page.title | escape }}
+                          </h2>
+                        </div>
+                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      </summary>
+                      <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                        {{ block.settings.content }}
+                        {{ block.settings.page.content }}
                       </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
-                    </summary>
-                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {{ block.settings.content }}
-                      {{ block.settings.page.content }}
-                    </div>
-                  </details>
-                </div>
+                    </details>
+                  </div>
+                {% endif %}
 
               {%- when 'quantity_selector' -%}
                 {% comment %}
@@ -819,7 +980,6 @@
       {{ product | structured_data }}
     </script>
   </div>
-
 </product-info>
 
 <script type="application/ld+json">
@@ -2373,3 +2533,13 @@
   ]
 }
 {% endschema %}
+
+<style>
+  .kaching-bundles__bar-label,
+  .kaching-bundles__bar-title,
+  .kaching-bundles__bar-subtitle,
+  .kaching-bundles__bar-price,
+  .kaching-bundles__bar-full-price {
+    font-family: 'SF Pro Display', sans-serif !important;
+  }
+</style>
