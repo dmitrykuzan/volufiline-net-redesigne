@@ -90,6 +90,13 @@
             "product": "volufiline-100"
           }
         },
+        "video_slide_4CiqAx": {
+          "type": "video_slide",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/665975e803f34fcd8ae36a40c8ec6a0d.mp4",
+            "poster_url": "https://cdn.shopify.com/s/files/1/0702/9991/0336/files/Screenshot_2025-09-04_at_10.18.15_AM.png?v=1757006316"
+          }
+        },
         "video_slide_dta36Y": {
           "type": "video_slide",
           "settings": {
@@ -128,6 +135,7 @@
       },
       "block_order": [
         "product_NfW986",
+        "video_slide_4CiqAx",
         "video_slide_dta36Y",
         "video_slide_V8dagD",
         "video_slide_FdhM8M",
