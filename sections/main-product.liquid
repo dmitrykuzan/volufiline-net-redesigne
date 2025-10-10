@@ -807,6 +807,13 @@
                   </div>
                 {% endif %}
 
+                {% for product in collection.products %}
+  <div class="product-item">
+    <h2>{{ product.title }}</h2>
+    <p>ID: {{ product.id }}</p>
+  </div>
+{% endfor %}
+
               {%- when 'quantity_selector' -%}
                 {% comment %}
                   <div
