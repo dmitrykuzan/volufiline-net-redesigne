@@ -145,7 +145,7 @@
                    <span>Free shipping included</span>
                   </div>
                 {% endcomment %}
-                 {% assign special_handles = 'volufiline-100|volufiline-100-30ml' | split: '|' %}
+                 {% assign special_handles = 'volufiline-100|100-volufiline-30ml' | split: '|' %}
               {% if product and special_handles contains product.handle %}
                 <div class="custom-review__top-stars">
                   <div class="volufiline-rating-stars">
@@ -693,83 +693,7 @@
                       </div>
                     {% endif %}
 
-                      {% if product and product.handle == 'volufiline-100-30ml' %}
-                      <div class="product__upgrade">
-                        <div class="product__upgrade-top">
-                          <p></p>
-                        </div>
-
-                        <div class="product__upgrade-bottom">
-                          <p class="product__upgrade-title">RESULTS THAT LAST</p>
-                          <div class="product__upgrade-wrapper">
-                            <div class="product__upgrade-content">
-                              <span class="product__upgrade-text"
-                                >BUY TWO <br>
-                                + <br>
-                                ONE FREE</span
-                              >
-                              <img
-                                src="{{ 'product-upgrade.png' | asset_url }}"
-                                width="100"
-                                height="117"
-                                alt="Volufiline product"
-                                loading="lazy"
-                              >
-                              <span class="product__upgrade-name">THE ULTIMATE VOLUME SET</span>
-                            </div>
-
-                            <form method="post" action="/cart/add">
-                              <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                              <input type="hidden" name="quantity" value="2">
-
-                              <button
-                                type="submit"
-                                class="product-form__submit button-dark-2"
-                                style="cursor: pointer !important;"
-                              >
-                                <span>
-                                  Buy Volume Set - $59
-                                  <span class="product-price-compare">$90</span>
-                                </span>
-                                {%- render 'loading-spinner' -%}
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                        
-                        <div class="product__upgrade-bottom" style="padding-top: 2rem; border-top: .1rem solid #404040;">
-                          <p class="product__upgrade-title">BOOST YOUR RESULTS</p>
-                          <div class="product__upgrade-wrapper">
-                            <div class="product__upgrade-content">
-                             
-                              <img
-                                src="{{ 'cream-upsell.png' | asset_url }}"
-                                width="120"
-                                alt="Volufiline Booster Cream"
-                                loading="lazy"
-                              >
-                              <span class="product__upgrade-name">ACTIVATING BOOSTER CREAM</span>
-                            </div>
-
-                            <form method="post" action="/cart/add">
-                              <input type="hidden" name="id" value=46713843286208>
-                              <input type="hidden" name="quantity" value="1">
-
-                              <button
-                                type="submit"
-                                class="product-form__submit button-dark-2"
-                                style="cursor: pointer !important;"
-                              >
-                                <span>
-                                  Add To Cart - $19.99‎
-                                </span>
-                                {%- render 'loading-spinner' -%}
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    {% endif %}
+                      
     
                 {%- endif -%}
 
