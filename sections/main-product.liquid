@@ -145,8 +145,6 @@
                    <span>Free shipping included</span>
                   </div>
                 {% endcomment %}
-                 {% assign special_handles = 'volufiline-100|100-volufiline-30ml' | split: '|' %}
-              {% if product and special_handles contains product.handle %}
                 <div class="custom-review__top-stars">
                   <div class="volufiline-rating-stars">
                     <span class="volufiline-rating-star">
@@ -225,7 +223,6 @@
                     margin-right: 6px; /* adjust as needed */
                   }
                 </style>
-              {% endif %}
 
                 <div {{ block.shopify_attributes }}>
                   {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
