@@ -463,41 +463,7 @@
   }
 </script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const navLink = document.getElementById('HeaderMenu-results');
-  if (!navLink) return;
 
-  const targetId = 'shopify-section-template--18680803852480__banner_result_r7bNhR';
-  const productUrl = 'https://shop.volufiline.us/products/volufiline-100';
-
-  navLink.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    // Case 1: already on product page
-    if (window.location.pathname.includes('/products/volufiline-100')) {
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Case 2: redirect to product page with a hash marker
-      window.location.href = productUrl + '#' + targetId;
-    }
-  });
-
-  // Case 3: if URL has hash when landing on product page, scroll after load
-  if (window.location.hash) {
-    const hashId = window.location.hash.substring(1);
-    const target = document.getElementById(hashId);
-    if (target) {
-      setTimeout(() => {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }, 400); // wait a moment for layout to render
-    }
-  }
-});
-</script>
 
 {%- if request.page_type == 'index' -%}
   {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
