@@ -24,10 +24,10 @@
       </div>
 
       <div class="banner-volufiline-image-text">
-        <h3>coming winter 2025 to</h3>
+        {% comment %} <h3>coming winter 2025 to</h3>
         <div class="banner-volufiline-image-sephora">
           <img src="{{ 'sephora.png' | asset_url }}" width="402" height="52" alt="sephora" loading="lazy">
-        </div>
+        </div> {% endcomment %}
 
         {% for block in section.blocks %}
           {% if block.type == 'product' and block.settings.product %}
