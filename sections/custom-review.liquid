@@ -113,7 +113,6 @@
 
       <div class="rv-lb__title-line">
         <h3 class="rv-lb__title" id="lbTitle"></h3>
-        <div class="custom-stars" id="lbStars"></div>
       </div>
 
       <div class="rv-lb__text" id="lbText"></div>
@@ -138,7 +137,6 @@
   const lbImg = lbEl.querySelector('.rv-lb__img');
   const lbName = document.getElementById('lbName');
   const lbTitle = document.getElementById('lbTitle');
-  const lbStars = document.getElementById('lbStars');
   const lbText = document.getElementById('lbText');
   const lbThumbs = document.getElementById('lbThumbs');
   const btnPrev = lbEl.querySelector('.rv-lb__nav--prev');
@@ -226,7 +224,6 @@
 
   lbName.textContent = review.Name || '';
   lbTitle.textContent = review.Title || '';
-  lbStars.innerHTML = renderStars(review.Stars);
   lbText.textContent = review.Description || '';
 
   const imgs = normalizeImages(review);
