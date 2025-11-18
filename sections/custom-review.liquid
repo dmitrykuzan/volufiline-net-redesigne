@@ -1,175 +1,494 @@
- {{ 'custom-review.css' | asset_url | stylesheet_tag }}
-
-
+{{ 'custom-review.css' | asset_url | stylesheet_tag }}
 
 <div class="custom-review page-width">
   <div class="custom-review__inner">
     <div class="custom-review__top">
       <div class="custom-review__top-stars">
-        <span>4.8</span>
-        <div class="volufiline-rating-stars">
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
-          <span class="volufiline-rating-star">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-              <path fill="#C98A3A" class="cls-1" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-            </svg>
-          </span>
+        <p>Based on 5,382 reviews</p>
+        <h2 class="section-title-volufiline">AVERAGE RATING</h2>
+
+
+        <div class="custom-review-container">
+          <span>4.8</span>
+
+          <div class="volufiline-rating-stars custom-stars" aria-label="4.8 out of 5 stars">
+            {% for i in (1..4) %}
+              <span class="volufiline-rating-star">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 117.1" aria-hidden="true">
+                  <path fill="#fec108" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62L91.64,74.18l8.9,39a3.19,3.19,0,0,1-4.42,3.64L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09l8.91-39L1.09,47.88A3.2,3.2,0,0,1,2.98,42.34l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+                </svg>
+              </span>
+            {% endfor %}
+
+            <span class="volufiline-rating-star">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 117.1" aria-hidden="true">
+                <defs>
+                  <!-- unique id to avoid collisions -->
+                  <linearGradient id="avgStarGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <!-- left side filled gold, right side light gray -->
+                    <stop offset="75%" stop-color="#fec108"/>
+                    <stop offset="75%" stop-color="#DDDDDD"/>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#avgStarGradient)" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62L91.64,74.18l8.9,39a3.19,3.19,0,0,1-4.42,3.64L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09l8.91-39L1.09,47.88A3.2,3.2,0,0,1,2.98,42.34l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
 
-      <h2 class="section-title-volufiline">AVERAGE RATING</h2>
-      <p>Based on 5,382 reviews</p>
+      <button
+        type="button"
+        id="openReviewModalBtn"
+        class="button-dark custom-review__write-btn"
+        aria-haspopup="dialog"
+        aria-controls="reviewModal"
+      >
+        Write a review
+      </button>
     </div>
 
-    {% if section.blocks.size > 0 %}
-      <ol class="custom-review__list">
-        {% for block in section.blocks %}
-          <li class="custom-review__item {% if forloop.index > 5 %}hidden-review{% endif %}">
-            <div class="custom-review__item-block-left">
-              <div class="custom-review__item-info">
-                <p class="custom-review__item-name">{{ block.settings.name_customer }}</p>
-                <p class="custom-review__item-verified">
-                  Verified Buyer
-                  <svg
-                    fill="#000000"
-                    width="20px"
-                    height="20px"
-                    viewBox="0 0 512 512"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M256,48C141.31,48,48,141.31,48,256s93.31,208,208,208,208-93.31,208-208S370.69,48,256,48ZM364.25,186.29l-134.4,160a16,16,0,0,1-12,5.71h-.27a16,16,0,0,1-11.89-5.3l-57.6-64a16,16,0,1,1,23.78-21.4l45.29,50.32L339.75,165.71a16,16,0,0,1,24.5,20.58Z"/>
-                  </svg>
-                </p>
-                <p class="custom-review__item-date">{{ block.settings.review_date }}</p>
-              </div>
-            </div>
+    <!-- FEED -->
+    <ol class="custom-review__list" id="reviews-list"></ol>
 
-            <div class="custom-review__item-block-right">
-              <div class="custom-review__item-text">{{ block.settings.review_text }}</div>
+    <div class="custom-review__more-container">
+      <button class="custom-review__toggle-btn button-dark" data-expanded="false">Load more</button>
+    </div>
+  </div>
+</div>
 
-              <div class="custom-review__item-title-wrap">
-                <h3 class="custom-review__item-title">{{ block.settings.title_review }}</h3>
-                <div class="custom-review__item-stars">
-                  {% for i in (1..block.settings.review_rating) %}
-                    <span class="volufiline-rating-star">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 122.88 117.1">
-                        <path fill="#C98A3A" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
-                      </svg>
-                    </span>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-          </li>
-        {% endfor %}
-      </ol>
-
-      {% if section.blocks.size > 5 %}
-        <div class="custom-review__more-container">
-          <button class="custom-review__toggle-btn button-dark" data-expanded="false">Load more</button>
+<!-- SUBMIT REVIEW MODAL (unchanged UI; just opens/closes) -->
+<div id="reviewModal" aria-hidden="true" data-rv-close>
+  <div class="rv-box" role="dialog" aria-modal="true" aria-labelledby="rv-title">
+    <button class="rv-close" type="button" aria-label="Close" data-rv-close>&times;</button>
+    <h2 id="rv-title">Write a review</h2>
+    <form id="rv-form" novalidate>
+      <label for="rv-name">Your name</label>
+      <input id="rv-name" type="text" autocomplete="name" />
+      <label for="rv-title-input">Headline</label>
+      <input id="rv-title-input" type="text" />
+      <label>Rate</label>
+      <div id="rv-stars" role="radiogroup" aria-label="Rating"></div>
+      <div class="rv-error" data-error-for="stars"></div>
+      <label for="rv-comment">Comment</label>
+      <textarea id="rv-comment"></textarea>
+      <div class="rv-error" data-error-for="comment"></div>
+      <div class="rv-upload">
+        <div id="rv-drop" class="rv-drop">
+          <p>Drag & drop image here or <button type="button" id="rv-browse" class="rv-link">browse</button></p>
+          <input id="rv-image" type="file" accept="image/png,image/jpeg,image/webp" hidden />
         </div>
-      {% endif %}
-    {% else %}
-      <p>There are no reviews yet.</p>
-    {% endif %}
+        <div id="rv-preview" hidden>
+          <img id="rv-preview-img" alt="Selected image preview" />
+          <button type="button" id="rv-remove-image" class="rv-link">Remove image</button>
+        </div>
+        <div class="rv-error" data-error-for="image"></div>
+      </div>
+      <div class="rv-error" data-error-for="name"></div>
+      <div class="rv-error" data-error-for="title"></div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="rv-lightbox" aria-hidden="true">
+  <div class="rv-lb__panel" role="dialog" aria-modal="true">
+    <button class="rv-lb__close" aria-label="Close lightbox">✕</button>
+
+    <div class="rv-lb__left">
+      <img class="rv-lb__img" alt="">
+      <button class="rv-lb__nav rv-lb__nav--prev" aria-label="Previous image">‹</button>
+      <button class="rv-lb__nav rv-lb__nav--next" aria-label="Next image">›</button>
+    </div>
+
+    <div class="rv-lb__right">
+      <div class="rv-lb__row1">
+        <div class="rv-lb__avatar" id="lbAvatar">👤</div>
+        <div>
+          <div class="rv-lb__name" id="lbName"></div>
+          <div class="rv-lb__verified">Verified Buyer</div>
+        </div>
+      </div>
+
+      <div class="rv-lb__title-line">
+        <h3 class="rv-lb__title" id="lbTitle"></h3>
+        <div class="custom-stars" id="lbStars"></div>
+      </div>
+
+      <div class="rv-lb__text" id="lbText"></div>
+
+      <div class="rv-lb__thumbs" id="lbThumbs"></div>
+    </div>
   </div>
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.querySelector('.custom-review__toggle-btn');
+/* ================================================================
+   1) Render feed with up to 3 thumbnails per review (image1..image3)
+   2) Open lightbox with THE CORRECT review when any thumb is clicked
+   3) Keep star size consistent
+================================================================ */
+(function () {
+  const CHAR_LIMIT_FOR_READMORE = 650;
+  const listEl = document.getElementById('reviews-list');
 
-    if (toggleButton) {
-      toggleButton.addEventListener('click', function () {
-        const isExpanded = toggleButton.getAttribute('data-expanded') === 'true';
+  // Lightbox state
+  const lbEl = document.getElementById('rv-lightbox');
+  const lbImg = lbEl.querySelector('.rv-lb__img');
+  const lbName = document.getElementById('lbName');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbStars = document.getElementById('lbStars');
+  const lbText = document.getElementById('lbText');
+  const lbThumbs = document.getElementById('lbThumbs');
+  const btnPrev = lbEl.querySelector('.rv-lb__nav--prev');
+  const btnNext = lbEl.querySelector('.rv-lb__nav--next');
+  const btnClose = lbEl.querySelector('.rv-lb__close');
 
-        const hiddenReviews = document.querySelectorAll('.custom-review__item');
+  let currentReview = null;
+  let currentIndex = 0;
 
-        hiddenReviews.forEach((item, index) => {
-          if (index >= 5) {
-            if (isExpanded) {
-              item.classList.add('hidden-review');
-            } else {
-              item.classList.remove('hidden-review');
-            }
-          }
-        });
+  function starSVG() {
+    return `
+      <span class="volufiline-rating-star">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 117.1" aria-hidden="true">
+          <path fill="#fec108" d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62h0L91.64,74.18l8.9,39A3.19,3.19,0,0,1,98.12,117a3.27,3.27,0,0,1-2.46-.46L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09,3.14,3.14,0,0,1-.37-2.38h0l8.91-39L1.09,47.88a3.24,3.24,0,0,1-.32-4.52,3.32,3.32,0,0,1,2.29-1l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/>
+        </svg>
+      </span>`;
+  }
 
-        toggleButton.setAttribute('data-expanded', (!isExpanded).toString());
-        toggleButton.textContent = isExpanded ? 'Load more' : 'Hide';
-      });
+  function renderStars(n) {
+    const s = Math.max(0, Math.min(5, Number(n || 0)));
+    return `<div class="custom-stars" aria-label="${s} out of 5 stars">
+      ${Array(s).fill(starSVG()).join('')}
+    </div>`;
+  }
+
+  function normalizeImages(r) {
+    const imgs = [
+      r.image1 || r.Image1 || r['image 1'] || r['Image 1'],
+      r.image2 || r.Image2 || r['image 2'] || r['Image 2'],
+      r.image3 || r.Image3 || r['image 3'] || r['Image 3'],
+      r.image || r.Image
+    ].filter(Boolean);
+    const uniq = [];
+    imgs.forEach(u => { if (!uniq.includes(u)) uniq.push(u); });
+    return uniq.slice(0, 3);
+  }
+
+  function clampHTML(desc) {
+    const needsClamp = (desc || '').length > CHAR_LIMIT_FOR_READMORE;
+    return `
+      <div class="custom-review__item-text ${needsClamp ? 'is-clamped' : ''}" aria-expanded="false">
+        <span class="custom-review__item-text-content">${desc || ''}</span>
+        ${needsClamp ? `<a href="#" class="custom-review__readmore-link" role="button">Read more</a>` : ``}
+      </div>`;
+  }
+
+  function feedItemHTML(review, idx) {
+    const images = normalizeImages(review);
+    const thumbs = images.length ? `
+      <div class="custom-review__item-images" role="list" aria-label="Review images">
+        ${images.map((src, i) => `
+          <button type="button"
+                  class="custom-review__thumb"
+                  role="listitem"
+                  data-review-index="${idx}"
+                  data-image-index="${i}"
+                  aria-label="Open image ${i+1}">
+            <img src="${src}" alt="Customer photo ${i+1} from ${review.Name || ''}" loading="lazy" decoding="async">
+          </button>
+        `).join('')}
+      </div>` : '';
+
+    return `
+      <article class="custom-review__item" data-review-index="${idx}">
+        <div class="crv-head">
+          <div class="crv-name">${review.Name || ''}</div>
+          <div class="crv-verify">Verified Buyer</div>
+          <div class="custom-review__item-date">${review.Date || ''}</div>
+        </div>
+
+        <div class="custom-review__item-block-right">
+          ${thumbs}
+          ${clampHTML(review.Description || '')}
+          <div class="custom-review__item-title-wrap">
+            <h3 class="custom-review__item-title">${review.Title || ''}</h3>
+            <div class="custom-review__item-stars">${renderStars(review.Stars)}</div>
+          </div>
+        </div>
+      </article>`;
+  }
+
+ function openLightbox(review, imgIndex) {
+  currentReview = review;
+  currentIndex = imgIndex || 0;
+
+  lbName.textContent = review.Name || '';
+  lbTitle.textContent = review.Title || '';
+  lbStars.innerHTML = renderStars(review.Stars);
+  lbText.textContent = review.Description || '';
+
+  const imgs = normalizeImages(review);
+  const safeIndex = Math.max(0, Math.min(imgs.length - 1, currentIndex));
+  lbImg.src = imgs[safeIndex] || '';
+  lbImg.alt = `Customer photo ${safeIndex + 1} from ${review.Name || ''}`;
+
+  // thumbs in modal
+  lbThumbs.innerHTML = imgs.map((src, i) =>
+    `<button class="rv-lb__thumb" data-img-idx="${i}" aria-label="Show image ${i+1}">
+       <img src="${src}" alt="">
+     </button>`
+  ).join('');
+
+  // ✅ show arrows only if more than 1 image
+  const showArrows = imgs.length > 1;
+  btnPrev.style.display = showArrows ? 'flex' : 'none';
+  btnNext.style.display = showArrows ? 'flex' : 'none';
+
+  lbEl.classList.add('is-open');
+  lbEl.setAttribute('aria-hidden', 'false');
+}
+
+  function closeLightbox() {
+    lbEl.classList.remove('is-open');
+    lbEl.setAttribute('aria-hidden', 'true');
+    lbImg.removeAttribute('src');
+  }
+
+  // Event delegation for feed
+  listEl.addEventListener('click', function (e) {
+    // expand/collapse text
+    const link = e.target.closest('.custom-review__readmore-link');
+    if (link) {
+      e.preventDefault();
+      const wrap = link.closest('.custom-review__item-text');
+      const expanded = wrap.classList.toggle('is-expanded');
+      if (expanded) {
+        wrap.classList.remove('is-clamped');
+        wrap.setAttribute('aria-expanded','true');
+        link.textContent = 'Show less';
+      } else {
+        wrap.classList.add('is-clamped');
+        wrap.setAttribute('aria-expanded','false');
+        link.textContent = 'Read more';
+      }
+      return;
+    }
+
+    // open lightbox from a thumb
+    const thumb = e.target.closest('.custom-review__thumb');
+    if (thumb) {
+      const rIdx = Number(thumb.getAttribute('data-review-index'));
+      const iIdx = Number(thumb.getAttribute('data-image-index'));
+      const review = window.__REVIEWS_RENDERED__[rIdx];
+      if (review) openLightbox(review, iIdx);
     }
   });
+
+  // Lightbox interactions
+  btnClose.addEventListener('click', closeLightbox);
+  lbEl.addEventListener('click', (e) => { if (e.target === lbEl) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lbEl.classList.contains('is-open')) closeLightbox(); });
+
+  btnPrev.addEventListener('click', () => {
+    if (!currentReview) return;
+    const imgs = normalizeImages(currentReview);
+    currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+    lbImg.src = imgs[currentIndex];
+  });
+  btnNext.addEventListener('click', () => {
+    if (!currentReview) return;
+    const imgs = normalizeImages(currentReview);
+    currentIndex = (currentIndex + 1) % imgs.length;
+    lbImg.src = imgs[currentIndex];
+  });
+  lbThumbs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.rv-lb__thumb');
+    if (!btn || !currentReview) return;
+    const i = Number(btn.getAttribute('data-img-idx') || 0);
+    const imgs = normalizeImages(currentReview);
+    currentIndex = Math.max(0, Math.min(imgs.length - 1, i));
+    lbImg.src = imgs[currentIndex];
+  });
+
+  // Render feed
+ fetch('{{ "reviews.json" | asset_url }}')
+    .then(r => r.json())
+    .then(reviews => {
+      // (optional) filter future-dated reviews
+      const today = new Date();
+      const visible = (reviews || []).filter(r => !r.Date || new Date(r.Date) <= today);
+
+      window.__REVIEWS_RENDERED__ = visible; // keep to locate the correct review later
+
+      const html = visible.map((r, i) => feedItemHTML(r, i)).join('');
+      listEl.innerHTML = html;
+
+      // Load more
+      const toggleButton = document.querySelector('.custom-review__toggle-btn');
+      const items = Array.from(listEl.querySelectorAll('.custom-review__item'));
+      items.forEach((el, idx) => { if (idx >= 5) el.classList.add('hidden-review'); });
+      if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+          const expanded = toggleButton.getAttribute('data-expanded') === 'true';
+          items.forEach((el, idx) => { if (idx >= 5) el.classList.toggle('hidden-review', expanded); });
+          toggleButton.setAttribute('data-expanded', (!expanded).toString());
+          toggleButton.textContent = expanded ? 'Load more' : 'Hide';
+        });
+      }
+    })
+    .catch(err => console.error('Error loading reviews.json', err));
+})();
 </script>
 
-{% schema %}
-{
-  "name": "Custom Review List",
-  "tag": "section",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "list_item",
-      "name": "Customer Review",
-      "settings": [
-        {
-          "type": "text",
-          "id": "name_customer",
-          "label": "Enter reviewer name"
-        },
-        {
-          "type": "text",
-          "id": "title_review",
-          "label": "Enter review title",
-          "default": "Volufiline • Hair Growth Solution"
-        },
-        {
-          "type": "text",
-          "id": "review_date",
-          "label": "Enter review date"
-        },
-        {
-          "type": "range",
-          "id": "review_rating",
-          "label": "Rating (1-5)",
-          "min": 1,
-          "max": 5,
-          "step": 1,
-          "default": 5
-        },
-        {
-          "type": "richtext",
-          "id": "review_text",
-          "label": "Review text",
-          "default": "<p>Lightning fast delivery, great job</p>"
-        }
-      ]
-    }
-  ],
+<script>
+/* --------------------------------------------------------------
+   Review modal: open/close, rating stars, validation + errors
+   (No storage/post yet. Look for the "TODO: POST" section.)
+-------------------------------------------------------------- */
+(function(){
+  const modal   = document.getElementById('reviewModal');
+  const form    = document.getElementById('rv-form');
+  const trigger = document.getElementById('openReviewModalBtn');
+  if (!modal || !form || !trigger) return;
 
-  "presets": [
-    {
-      "name": "Custom Review List"
+  const el = {
+    name:  document.getElementById('rv-name'),
+    title: document.getElementById('rv-title-input'),
+    text:  document.getElementById('rv-comment'),
+    starsBox: document.getElementById('rv-stars')
+  };
+
+  /* ---------- Modal open/close ---------- */
+  function open()  { modal.classList.add('is-open'); document.documentElement.classList.add('rv-no-scroll'); (el.name||{}).focus?.(); }
+  function close() { modal.classList.remove('is-open'); document.documentElement.classList.remove('rv-no-scroll'); form.reset(); clearErrors(); setStars(0); }
+
+  trigger.addEventListener('click', open);
+  modal.addEventListener('click', e => { if (e.target.hasAttribute('data-rv-close')) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+
+  /* ---------- Stars UI (creates 5 buttons if missing) ---------- */
+  let starsValue = 0;
+  function starSVG(){return '<svg viewBox="0 0 122.88 117.1" aria-hidden="true" focusable="false"><path d="M64.42,2,80.13,38.7,120,42.26a3.2,3.2,0,0,1,1.82,5.62L91.64,74.18l8.9,39a3.19,3.19,0,0,1-4.42,3.64L61.41,96.1,27.07,116.64a3.18,3.18,0,0,1-4.38-1.09l8.91-39L1.09,47.88A3.2,3.2,0,0,1,2.98,42.34l39.72-3.56L58.49,2a3.24,3.24,0,0,1,5.93,0Z"/></svg>'; }
+  function buildStars(){
+    if (!el.starsBox) return;
+    if (el.starsBox.children.length) return; // already built
+    el.starsBox.setAttribute('role','radiogroup');
+    for (let i=1;i<=5;i++){
+      const b=document.createElement('button');
+      b.type='button'; b.className='rv-star'; b.innerHTML=starSVG();
+      b.setAttribute('role','radio'); b.setAttribute('aria-label', `${i} star${i>1?'s':''}`); b.setAttribute('aria-checked','false');
+      b.addEventListener('click', ()=> setStars(i));
+      b.addEventListener('keydown', (e)=>{
+        if (e.key==='ArrowRight'||e.key==='ArrowUp'){ setStars(Math.min(5, starsValue+1)); e.preventDefault(); }
+        if (e.key==='ArrowLeft' ||e.key==='ArrowDown'){ setStars(Math.max(1, starsValue-1)); e.preventDefault(); }
+      });
+      el.starsBox.appendChild(b);
     }
-  ]
+  }
+  function setStars(val){
+    starsValue = Number(val)||0;
+    [...(el.starsBox?.children||[])].forEach((btn,idx)=>{
+      btn.setAttribute('aria-checked', String(idx < starsValue));
+      btn.tabIndex = (idx+1===Math.max(1,starsValue)) ? 0 : -1;
+    });
+  }
+  buildStars();
+
+  /* ---------- Validation helpers ---------- */
+  function qError(forKey){ return form.querySelector(`.rv-error[data-error-for="${forKey}"]`); }
+  function showError(forKey, msg, fieldEl){
+    const n = qError(forKey); if (n) n.textContent = msg || '';
+    if (fieldEl) fieldEl.classList.add('rv-invalid');
+  }
+  function clearError(forKey){
+    const n = qError(forKey); if (n) n.textContent = '';
+  }
+  function clearErrors(){
+    ['name','title','comment','stars'].forEach(clearError);
+    [el.name, el.title, el.text].forEach(x=>x && x.classList.remove('rv-invalid'));
+    form.classList.remove('rv-submit-error');
+  }
+
+  function validate(){
+    clearErrors();
+    let ok = true, firstBad = null;
+
+    const name = (el.name?.value||'').trim();
+    const title = (el.title?.value||'').trim();
+    const text = (el.text?.value||'').trim();
+
+    if (!name){ ok=false; showError('name','Please enter your name.', el.name); firstBad = firstBad || el.name; }
+    if (!title){ ok=false; showError('title','Please add a headline.', el.title); firstBad = firstBad || el.title; }
+    if (!text || text.length < 12){ ok=false; showError('comment','Please write at least 12 characters.', el.text); firstBad = firstBad || el.text; }
+    if (!starsValue){ ok=false; showError('stars','Please select a rating.'); firstBad = firstBad || (el.starsBox?.querySelector('.rv-star')||null); }
+
+    if (!ok){
+      form.classList.add('rv-submit-error');
+      firstBad?.focus?.({preventScroll:true});
+    }
+    return ok;
+  }
+
+  /* ---------- Submit (no persistence; ready for your API) ---------- */
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    if (!validate()) return;
+
+    // Build a payload you can send later
+    const payload = {
+      name:  el.name.value.trim(),
+      title: el.title.value.trim(),
+      comment: el.text.value.trim(),
+      stars: starsValue,
+      // image: ... (attach if you collect images here)
+      submittedAt: new Date().toISOString()
+    };
+
+    /* TODO: POST to your endpoint once ready
+    await fetch('/apps/reviews/create', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    */
+
+    // For now: close & reset
+    close();
+  });
+})();
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "image": [
+    {{ product.featured_image | image_url: width: 800 | prepend: "https:" | json }}
+  ],
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  "description": {{ product.description | strip_html | strip_newlines | truncate: 500 | json }},
+  "url": {{ shop.url | append: product.url | json }},
+  "offers": {
+    "@type": "Offer",
+    "url": {{ shop.url | append: product.url | json }},
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "price": {{ product.selected_or_first_available_variant.price | money_without_currency | replace: ",", "" | json }},
+    "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "5382",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
-{% endschema %} 
+</script>
