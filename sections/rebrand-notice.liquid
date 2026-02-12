@@ -1,0 +1,294 @@
+<style>
+  /* -------------------------
+     Fonts (loaded from assets)
+     Make sure these files exist in /assets
+  -------------------------- */
+
+  /* Bold */
+  @font-face {
+    font-family: 'Maison Neue';
+    src: url('{{ "fonnts.com-Maison_Neue_Bold.ttf" | asset_url }}') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Book (Regular) */
+  @font-face {
+    font-family: 'Maison Neue';
+    src: url('{{ "fonnts.com-Maison_Neue_Book.ttf" | asset_url }}') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Light */
+  @font-face {
+    font-family: 'Maison Neue';
+    src: url('{{ "fonnts.com-Maison_Neue_Light.ttf" | asset_url }}') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Mono */
+  @font-face {
+    font-family: 'Maison Neue Mono';
+    src: url('{{ "fonnts.com-Maison_Neue_Mono.ttf" | asset_url }}') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root{
+    --rb-font: 'Maison Neue', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --rb-mono: 'Maison Neue Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .rb-wrap{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f6f7fb;
+    padding:32px 16px;
+    font-family: var(--rb-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .rb-card{
+    width:min(900px, 100%);
+    background:#fff;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:18px;
+    box-shadow:0 18px 60px rgba(0,0,0,.10);
+    padding:34px 34px 28px;
+    position:relative;
+  }
+
+  .rb-brand{
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .rb-brand h1{
+    font-size:32px;
+    line-height:1.15;
+    margin:0 0 8px;
+    font-weight:700;
+    letter-spacing:-.02em;
+    color:#0d1321;
+  }
+  .rb-brand p{
+    margin:0;
+    font-size:16px;
+    font-weight:400;
+    color:rgba(13,19,33,.75);
+  }
+
+  .rb-divider{
+    height:1px;
+    background:rgba(0,0,0,.08);
+    margin:18px 0 18px;
+  }
+
+  .rb-body{
+    font-size:16px;
+    line-height:1.65;
+    font-weight:400;
+    color:rgba(13,19,33,.9);
+  }
+  .rb-body strong{ color:#0d1321; font-weight:700; }
+
+  .rb-mono{
+    font-family: var(--rb-mono);
+    font-weight:400;
+    letter-spacing:.02em;
+  }
+
+  .rb-cta{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:18px;
+    justify-content:center;
+  }
+  .rb-btn{
+    appearance:none;
+    border:none;
+    border-radius:12px;
+    padding:12px 16px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    transition:transform .05s ease, opacity .15s ease;
+    font-family: var(--rb-font);
+  }
+  .rb-btn:active{ transform:translateY(1px); }
+  .rb-btn.primary{
+    background:#111827;
+    color:#fff;
+  }
+  .rb-btn.secondary{
+    background:#f3f4f6;
+    color:#111827;
+    border:1px solid rgba(0,0,0,.10);
+  }
+
+  .rb-support{
+    margin-top:18px;
+    background:#f7fafc;
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .rb-support h2{
+    font-size:16px;
+    margin:0 0 10px;
+    color:#111827;
+    font-weight:700;
+  }
+  .rb-support a{
+    color:#0b5fff;
+    text-decoration:none;
+    font-weight:700;
+    font-family: var(--rb-font);
+  }
+  .rb-support a:hover{ text-decoration:underline; }
+
+  .rb-grid{
+    display:grid;
+    gap:8px;
+  }
+  .rb-row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    justify-content:space-between;
+    flex-wrap:wrap;
+  }
+  .rb-label{ color:rgba(17,24,39,.65); font-weight:700; }
+  .rb-value{ color:#111827; font-weight:700; }
+
+  .rb-foot{
+    margin-top:16px;
+    text-align:center;
+    color:rgba(17,24,39,.55);
+    font-size:13px;
+    font-weight:400;
+  }
+</style>
+
+<div class="rb-wrap" data-rebrand-page>
+  <main class="rb-card" role="main" aria-label="Rebrand notice">
+    <div class="rb-brand">
+      <h1>We’ve rebranded to <span style="white-space:nowrap;">Volumize</span></h1>
+      <p>You can continue shopping on our new store.</p>
+    </div>
+
+    <div class="rb-divider"></div>
+
+    <div class="rb-body">
+      <p>
+        We’re no longer selling through this website. To place a new order, please visit our new official store:
+        <strong>Volumize.us</strong>
+      </p>
+      <p>
+        Need help with a past order or membership? Our team is here to support you.
+      </p>
+
+      <div class="rb-cta">
+        <a class="rb-btn primary" href="https://volumize.us" rel="noopener">
+          Go to the new store
+        </a>
+        <a class="rb-btn secondary" href="https://cancel.volufiline.us/login?store=jg3v04-dq" rel="noopener">
+          Manage / Cancel Membership
+        </a>
+      </div>
+
+      <div class="rb-support" aria-label="Support contact">
+        <h2>Support contact</h2>
+        <div class="rb-grid">
+          <div class="rb-row">
+            <div class="rb-label">Email</div>
+            <div class="rb-value"><a href="mailto:info@volufiline.us">info@volufiline.us</a></div>
+          </div>
+          <div class="rb-row">
+            <div class="rb-label">Phone</div>
+            <div class="rb-value"><a href="tel:+15134499947">+1 (513) 449-9947</a></div>
+          </div>
+          <div class="rb-row">
+            <div class="rb-label">Membership portal</div>
+            <div class="rb-value">
+              <a href="https://cancel.volufiline.us/login?store=jg3v04-dq" rel="noopener">
+                cancel.volufiline.us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rb-foot">
+        © {{ 'now' | date: '%Y' }} Volufiline / Volumize. All rights reserved.
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  // OPTIONAL: "single page" behavior — blocks most navigation out of this page.
+  // Remove if you don't want it this strict.
+  (function () {
+    var root = document.querySelector('[data-rebrand-page]');
+    if (!root) return;
+
+    // Kill theme header/footer if they still appear (some themes inject via JS)
+    var header = document.querySelector('header, .header, #shopify-section-header');
+    var footer = document.querySelector('footer, .footer, #shopify-section-footer');
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+
+    // Prevent clicking links that aren't allowed
+    var ALLOW = [
+      'https://volumize.us',
+      'https://cancel.volufiline.us/login?store=jg3v04-dq',
+      'mailto:info@volufiline.us',
+      'tel:+15134499947'
+    ];
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a');
+      if (!a) return;
+
+      var href = (a.getAttribute('href') || '').trim();
+      if (!href) return;
+
+      // allow anchor links inside the page
+      if (href.startsWith('#')) return;
+
+      // allow exact matches + tel/mailto
+      if (ALLOW.includes(href) || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+    }, true);
+
+    // Optional: discourage back button loops (won’t fully stop it in all browsers)
+    history.pushState(null, '', location.href);
+    window.addEventListener('popstate', function () {
+      history.pushState(null, '', location.href);
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Rebrand Notice",
+  "settings": []
+}
+{% endschema %}
