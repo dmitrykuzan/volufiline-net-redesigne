@@ -393,5 +393,37 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer="defer"></script>
   </body>
 
+  {% if settings.site_lockdown_enabled %}
+<script>
+(function () {
+  // Change this to your rebrand page path:
+  var REBRAND_PATH = "/pages/rebrand";
+
+  // Allowlist paths that should NOT redirect:
+  var ALLOW_PATH_PREFIXES = [
+    REBRAND_PATH,
+  ];
+
+  // If you want to allow some specific pages too:
+  var ALLOW_EXACT = [
+    "/robots.txt",
+    "/sitemap.xml"
+  ];
+
+  var path = window.location.pathname;
+
+  // If already on allowed path, do nothing
+  for (var i=0; i<ALLOW_PATH_PREFIXES.length; i++){
+    if (path.indexOf(ALLOW_PATH_PREFIXES[i]) === 0) return;
+  }
+  for (var j=0; j<ALLOW_EXACT.length; j++){
+    if (path === ALLOW_EXACT[j]) return;
+  }
+
+  // Redirect everything else
+  window.location.replace(REBRAND_PATH);
+})();
+</script>
+{% endif %}
   
 </html>
